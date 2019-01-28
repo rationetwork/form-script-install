@@ -26,7 +26,7 @@ Paste this just before the closing `</body>` tag.
       window.clearChoice_conf = window.clearChoice_conf || {};
       clearChoice_conf = {
         key: 'your-affiliate-key-goes-here',
-        ref: 'your-affiliate-reference-goes-here',
+        ref: 'your-affiliate-reference-goes-here', // Optional
         elemId: 'ccApply', // Container tag id
       };
     </script>
