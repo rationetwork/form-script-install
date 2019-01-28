@@ -1,6 +1,6 @@
-# CCBundle
+# Clear choice form setup 
 
-CcBundle is a form that you can use to introduce your sites visitors to Choose Wisely’s award winning personal loan comparison service.
+Get set up with a form that you can use to introduce your sites visitors to Choose Wisely’s award winning personal loan comparison service.
 
 - No API calls.
 - No iFrames.
@@ -107,7 +107,7 @@ Higher conversion rates can be expected if you run the form on a stand alone pag
 
 
 ## Styling the form
-The form has its own stylesheet `https://3pi.choosewisely.co.uk/ccbundle.css` and comes with a set of basic styles. The forms stylesheet is loaded asynchronously using javascript to prevent any render blocking by the browser. This stylesheet is prepended to the top of the <head/> tag. To override the default styles you will need to modify your sites stylesheets.
+The form has its own stylesheet and a set of basic styles. The stylesheet is loaded asynchronously using javascript to prevent any render blocking by the browser. This stylesheet is prepended to the top of the <head/> tag. To override the default styles you will need to modify your sites stylesheets.
 
 
 ### CSS
