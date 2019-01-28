@@ -8,9 +8,6 @@ CcBundle is a form that you can use to introduce your sites visitors to Choose W
 
 It works by running a stand-alone application form on your site. Your visitors complete the form and are then automatically redirected to a comparison table on choosewisely where we will match them with their best available options.
 
-
-![alt text](https://3pi.choosewisely.co.uk/docs/cw-gif.gif "Clear Choice")
-
  
 ## Get started
 Your code snippet comes in two parts. 
