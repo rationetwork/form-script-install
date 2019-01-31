@@ -37,24 +37,26 @@ Paste this just before the closing `</body>` tag.
 ccBundle accepts the object `clearChoice_conf` as configuration with the following options.
 
 
-| Name          | Type     | Default       | Description                                                                                                                                                                                                    |
-| ------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| key           | String   | REQUIRED      | Your affiliate key, must be a valid key with no spaces.                                                                                                                                                        |
-| ref           | String   | `''`          | Your affiliate reference, must be a valid reference with no spaces.                                                                                                                                            |
-| elemId        | String   | `'ccApply'`   | Id of the element where your form will render, must be a valid id with no spaces.                                                                                                                              |
-| submitText    | String   | `'Get Quote'` | The text that will show inside your submit button.                                                                                                                                                             |
-| loanAmount    | Integer  | `1000`        | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
-| loanTerm      | Integer  | `12`          | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
-| laMax         | Integer  | `1000`        | Maximum Loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
-| laMin         | Integer  | `100`         | Maximum Loan amount accepted by the form. Must be more than or equal to 100.                                                                                                                                   |
-| laStep        | Integer  | `100`         | The amount you want to increment the loan amount slider by.                                                                                                                                                    |
-| ltMax         | Integer  | `60`          | Maximum Loan amount accepted by the form. Must be less than or equal to 60.                                                                                                                                    |
-| ltMin         | Integer  | `3`           | Maximum Loan amount accepted by the form. Must be more than or equal to 3.                                                                                                                                     |
-| ltStep        | Integer  | `1`           | The amount you want to increment the loan term slider by.                                                                                                                                                      |
-| onSubmit      | function | `NOOP`        | Callback that will run when the form is submitted. Contains customer data. Can be used to send events to analytics platforms like GA.                                                                          |
-| fixedControls | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls  to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form. |
-| laMarks       | Object   | `{}`          | Loan amount marks for the slider.                                                                                                                                                                              |
-| ltMarks       | Object   | `{}`          | Loan term marks for the slider.                                                                                                                                                                                |
+| Name            | Type     | Default       | Description                                                                                                                                                                                                    |
+| --------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| key             | String   | REQUIRED      | Your affiliate key, must be a valid key with no spaces.                                                                                                                                                        |
+| ref             | String   | `''`          | Your affiliate reference, must be a valid reference with no spaces.                                                                                                                                            |
+| elemId          | String   | `'ccApply'`   | Id of the element where your form will render, must be a valid id with no spaces.                                                                                                                              |
+| submitText      | String   | `'Get Quote'` | The text that will show inside your submit button.                                                                                                                                                             |
+| loanAmount      | Integer  | `1000`        | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
+| loanTerm        | Integer  | `12`          | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
+| laMax           | Integer  | `1000`        | Maximum Loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
+| laMin           | Integer  | `100`         | Maximum Loan amount accepted by the form. Must be more than or equal to 100.                                                                                                                                   |
+| laStep          | Integer  | `100`         | The amount you want to increment the loan amount slider by.                                                                                                                                                    |
+| ltMax           | Integer  | `60`          | Maximum Loan amount accepted by the form. Must be less than or equal to 60.                                                                                                                                    |
+| ltMin           | Integer  | `3`           | Maximum Loan amount accepted by the form. Must be more than or equal to 3.                                                                                                                                     |
+| ltStep          | Integer  | `1`           | The amount you want to increment the loan term slider by.                                                                                                                                                      |
+| onSubmit        | function | `NOOP`        | Callback that will run when the form is submitted. Contains customer data. Can be used to send events to analytics platforms like GA.                                                                          |
+| fixedControls   | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls  to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form. |
+| laMarks         | Object   | `{}`          | Loan amount marks for the slider.                                                                                                                                                                              |
+| ltMarks         | Object   | `{}`          | Loan term marks for the slider.                                                                                                                                                                                |
+| termsConditions | String   | `''`          | Absolute URL of your terms and conditions page. This will include a link to your terms and conditions on the submit stage                                                                                      |
+| privacyPolicy   | String   | `''`          | Absolute URL of your privacy policy page. This will include a link to your privacy policy on the submit stage                                                                                                  |
 
 ### Settings Example
 ```js
@@ -79,11 +81,11 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
       
       // Send an event to google analytics.
       ga('send', {
-      hitType: 'event',
-      eventCategory: 'Form',
-      eventAction: 'Submit',
-      eventLabel: formData.loanAmount + '|' + formData.loanTerm;
-    });
+        hitType: 'event',
+        eventCategory: 'Form',
+        eventAction: 'Submit',
+        eventLabel: `${formData.loanAmount} | ${formData.loanTerm}`,
+      });
     },
     laMarks: {
       1000: '£1k',
@@ -99,6 +101,8 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
       24: '24 months',
       36: '36 months',
     },
+    termsConditions: "https://www.yourdomain.com/terms-and-conditions",
+    privacyPolicy: "https://www.yourdomain.com/privacy-policy",
   };
 ```
 
