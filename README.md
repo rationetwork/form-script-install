@@ -84,7 +84,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
         hitType: 'event',
         eventCategory: 'Form',
         eventAction: 'Submit',
-        eventLabel: `${formData.loanAmount} | ${formData.loanTerm}`,
+        eventLabel: formData.loanAmount + '|' + formData.loanTerm,
       });
     },
     laMarks: {
@@ -101,8 +101,8 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
       24: '24 months',
       36: '36 months',
     },
-    termsConditions: "https://www.yourdomain.com/terms-and-conditions",
-    privacyPolicy: "https://www.yourdomain.com/privacy-policy",
+    termsConditions: 'https://www.yourdomain.com/terms-and-conditions',
+    privacyPolicy: 'https://www.yourdomain.com/privacy-policy',
   };
 ```
 
