@@ -6,8 +6,7 @@ Get set up with a form that you can use to introduce your sites visitors to Choo
 - No iFrames.
 - No REST responses.
 
-It works by running a stand-alone application form on your site. Your visitors complete the form and are then automatically redirected to a comparison table on choosewisely where we will match them with their best available options.
-
+It works by running a stand-alone application form on your site. Your visitors complete the form and are then automatically redirected to a comparison table on choosewisely where we will match them with their best available options.  
  
 ## Get started
 Your code snippet comes in two parts. 
@@ -111,6 +110,9 @@ Higher conversion rates can be expected if you run the form on a stand alone pag
 
 
 ## Styling the form
+
+[See a demo here](https://jsfiddle.net/ratio/xr2n8675/153/)
+
 The form has its own stylesheet and a set of basic styles. The stylesheet is loaded asynchronously using javascript to prevent any render blocking by the browser. This stylesheet is prepended to the top of the <head/> tag. To override the default styles you will need to modify your sites stylesheets.
 
 
