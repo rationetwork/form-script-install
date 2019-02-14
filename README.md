@@ -111,7 +111,7 @@ Higher conversion rates can be expected if you run the form on a stand alone pag
 
 ## Styling the form
 
-[See a demo here](https://jsfiddle.net/ratio/xr2n8675/153/)
+[See a demo here](https://jsfiddle.net/ratio/1aq4up3j/)
 
 The form has its own stylesheet and a set of basic styles. The stylesheet is loaded asynchronously using javascript to prevent any render blocking by the browser. This stylesheet is prepended to the top of the <head/> tag. To override the default styles you will need to modify your sites stylesheets.
 
