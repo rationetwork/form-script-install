@@ -50,7 +50,6 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | ltMax           | Integer  | `60`          | Maximum Loan amount accepted by the form. Must be less than or equal to 60.                                                                                                                                    |
 | ltMin           | Integer  | `3`           | Maximum Loan amount accepted by the form. Must be more than or equal to 3.                                                                                                                                     |
 | ltStep          | Integer  | `1`           | The amount you want to increment the loan term slider by.                                                                                                                                                      |
-| onSubmit        | function | `NOOP`        | Callback that will run when the form is submitted. Contains customer data. Can be used to send events to analytics platforms like GA.                                                                          |
 | fixedControls   | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls  to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form. |
 | laMarks         | Object   | `{}`          | Loan amount marks for the slider.                                                                                                                                                                              |
 | ltMarks         | Object   | `{}`          | Loan term marks for the slider.                                                                                                                                                                                |
@@ -74,18 +73,6 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
     ltMin: 3,
     ltStep: 1,
     fixedControls: true,
-    onSubmit: function(formData){ 
-      // formData contains submitted data
-      console.log(formData); 
-      
-      // Send an event to google analytics.
-      ga('send', {
-        hitType: 'event',
-        eventCategory: 'Form',
-        eventAction: 'Submit',
-        eventLabel: formData.loanAmount + '|' + formData.loanTerm,
-      });
-    },
     laMarks: {
       1000: '£1k',
       3000: '£3k',
