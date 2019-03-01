@@ -42,6 +42,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | ref             | String   | `''`          | Your affiliate reference, must be a valid reference with no spaces.                                                                                                                                            |
 | elemId          | String   | `'ccApply'`   | Id of the element where your form will render, must be a valid id with no spaces.                                                                                                                              |
 | submitText      | String   | `'Get Quote'` | The text that will show inside your submit button.                                                                                                                                                             |
+| onSubmit        | Function | `NOOP`        | Callback that will run when the form is submitted. Contains customer data. Can be used to send events to analytics platforms like GA. |
 | loanAmount      | Integer  | `1000`        | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
 | loanTerm        | Integer  | `12`          | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
 | laMax           | Integer  | `1000`        | Maximum Loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
@@ -73,6 +74,15 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
     ltMin: 3,
     ltStep: 1,
     fixedControls: true,
+    onSubmit:function(){
+      // Callback, runs when the form is submitted
+	   window.ga('send', {
+		  hitType: 'event',
+		  eventCategory: 'Videos',
+		  eventAction: 'play',
+		  eventLabel: 'Fall Campaign'
+		});
+    },
     laMarks: {
       1000: '£1k',
       3000: '£3k',
