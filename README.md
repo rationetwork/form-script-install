@@ -66,6 +66,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
     ref: '1234', 
     elemId: 'ccApply', 
     submitText: 'Get my quote', 
+    continueText: 'Go', 
     loanAmount: 1700, 
     loanTerm: 15,
     laMax: 10000,
