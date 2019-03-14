@@ -44,6 +44,8 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | submitText      | String   | `'Get Quote'` | The text that will show inside your submit button.                                                                                                                                                             |
 | onSubmit        | Function | `NOOP`        | Callback that will run when the form is submitted. Contains customer data. Can be used to send events to analytics platforms like GA. |
 | sendingText        | String | `''`        | Message that the user will see after clicking the submit button on the form.  Also includes a loading bar. |
+| continueText      | String   | `'Continue'` | The button text that shows next to input fields when they are valid.                                                                                                                                                             |
+| onSubmit        | Function | `NOOP`        | Callback that will run when the form is submitted. Can be used to send events to analytics platforms like GA. |
 | loanAmount      | Integer  | `1000`        | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
 | loanTerm        | Integer  | `12`          | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
 | laMax           | Integer  | `1000`        | Maximum Loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
@@ -66,6 +68,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
     ref: '1234', 
     elemId: 'ccApply', 
     submitText: 'Get my quote', 
+    continueText: 'Go', 
     loanAmount: 1700, 
     loanTerm: 15,
     laMax: 10000,
