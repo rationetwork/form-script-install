@@ -57,7 +57,6 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | ltStep          | Integer  | `1`           | The amount you want to increment the loan term slider by.                                                                                                                                                      |
 | fixedControls   | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls  to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form. |
 | laMarks         | Object   | `{}`          | Loan amount marks for the slider.                                                                                                                                                                              |
-| ltMarks         | Object   | `{}`          | Loan term marks for the slider.                                                                                                                                                                                |
 | termsConditions | String   | `''`          | Absolute URL of your terms and conditions page. This will include a link to your terms and conditions on the submit stage                                                                                      |
 | privacyPolicy   | String   | `''`          | Absolute URL of your privacy policy page. This will include a link to your privacy policy on the submit stage                                                                                                  |
 
@@ -95,13 +94,6 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
       5000: '£5k',
       10000: '£10k',
       20000: '£20k',
-    },
-    ltMarks: {
-      3: '3 months',
-      6: '6 months',
-      12: '12 months',
-      24: '24 months',
-      36: '36 months',
     },
     termsConditions: 'https://www.yourdomain.com/terms-and-conditions',
     privacyPolicy: 'https://www.yourdomain.com/privacy-policy',
