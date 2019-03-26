@@ -49,6 +49,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | loanAmount      | Integer  | `1000`        | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
 | loanTerm        | Integer  | `12`          | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
 | alwaysShowFirstStage      | Boolean  | `false`        | Always start on the first stage of the form. Useful if you want to set a default `loanAmount` and or `loanTerm` but stil want to show these fields.                                                                                                                     |
+| showInputWarnings      | Boolean  | `true`        | Show or hide the warning boxes if users enter data that passes validation but looks suspect.                                                                                                                     |
 | laMax           | Integer  | `1000`        | Maximum Loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
 | laMin           | Integer  | `100`         | Maximum Loan amount accepted by the form. Must be more than or equal to 100.                                                                                                                                   |
 | laStep          | Integer  | `100`         | The amount you want to increment the loan amount slider by.                                                                                                                                                    |
@@ -71,6 +72,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
     continueText: 'Go', 
     loanAmount: 2000,
     alwaysShowFirstStage: true,
+    showInputWarnings: false,
     loanTerm: 15,
     laMax: 10000,
     laMin: 100,
