@@ -60,6 +60,8 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | laMarks         | Object   | `{}`          | Loan amount marks for the slider.                                                                                                                                                                              |
 | termsConditions | String   | `''`          | Absolute URL of your terms and conditions page. This will include a link to your terms and conditions on the submit stage                                                                                      |
 | privacyPolicy   | String   | `''`          | Absolute URL of your privacy policy page. This will include a link to your privacy policy on the submit stage                                                                                                  |
+| hideLoanAmountStage   | Boolean   | `false`          | If you are providing the loanAmount configuration setting, this setting will remove the loan amount stage from the form completely                                                                             |
+| hideLoanTermStage   | Boolean   | `false`          | If you are providing the loanTerm configuration setting, this setting will remove the loan term stage from the form completely                                                                                 |
 
 ### Settings Example
 ```js
