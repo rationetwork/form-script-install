@@ -63,7 +63,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | privacyPolicy   | String   | `''`          | Absolute URL of your privacy policy page. This will include a link to your privacy policy on the submit stage                                                                                                  |
 | hideLoanAmountStage | Boolean   | `false`          | If you are providing the loanAmount configuration setting, this setting will remove the loan amount stage from the form completely.                                                                    |
 | hideLoanTermStage   | Boolean   | `false`          | If you are providing the loanTerm configuration setting, this setting will remove the loan term stage from the form completely.                                                                        |
-| theme           | Enum     | `''`          | To apply one of the predefined themes to the form from the [list below](#themes)                                                                                    |
+| theme           | Enum     | `''`          | Apply one of the predefined themes to the form using a theme from the [list below](#themes)                                                                                    |
 
 ### Settings Example
 ```js
@@ -121,7 +121,7 @@ The form has its own stylesheet and a set of basic styles. The stylesheet is loa
 
 
 ### Themes
-The form has a list of prestyled themes that can be applied, use the theme name from the table below 
+The form has a list of prestyled themes that can be applied, use a theme name from the table below in your form settings configuration.
 
 | Name             | Decription                                         |
 | ---------------- | -------------------------------------------------- |
