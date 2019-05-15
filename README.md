@@ -27,6 +27,7 @@ Paste this just before the closing `</body>` tag.
         key: 'your-affiliate-key-goes-here',
         ref: 'your-affiliate-reference-goes-here', // Optional
         elemId: 'ccApply', // Container tag id
+	theme: 'ChooseWisely' // Optional
       };
     </script>
     <script type="text/javascript" src="https://3pi.choosewisely.co.uk/ccLoader.js"></script>
@@ -44,11 +45,11 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | submitText      | String   | `'Get Quote'` | The text that will show inside your submit button.                                                                                                                                                             |
 | onSubmit        | Function | `NOOP`        | Callback that will run when the form is submitted. Contains customer data. Can be used to send events to analytics platforms like GA. |
 | sendingText        | String | `''`        | Message that the user will see after clicking the submit button on the form.  Also includes a loading bar. |
-| continueText      | String   | `'Continue'` | The button text that shows next to input fields when they are valid.                                                                                                                                                             |
+| continueText      | String   | `'Continue'` | The button text that shows next to input fields when they are valid.                                                                                                                                          |
 | onSubmit        | Function | `NOOP`        | Callback that will run when the form is submitted. Can be used to send events to analytics platforms like GA. |
 | loanAmount      | Integer  | `1000`        | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
 | loanTerm        | Integer  | `12`          | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
-| alwaysShowFirstStage      | Boolean  | `false`        | Always start on the first stage of the form. Useful if you want to set a default `loanAmount` and or `loanTerm` but stil want to show these fields.                                                                                                                     |
+| alwaysShowFirstStage      | Boolean  | `false`        | Always start on the first stage of the form. Useful if you want to set a default `loanAmount` and or `loanTerm` but stil want to show these fields.                                                 |
 | showInputWarnings      | Boolean  | `true`        | Show or hide warnings if users enter data that passes validation but looks suspect.                                                                                                                     |
 | laMax           | Integer  | `1000`        | Maximum Loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
 | laMin           | Integer  | `100`         | Maximum Loan amount accepted by the form. Must be more than or equal to 100.                                                                                                                                   |
@@ -56,12 +57,13 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | ltMax           | Integer  | `60`          | Maximum Loan amount accepted by the form. Must be less than or equal to 60.                                                                                                                                    |
 | ltMin           | Integer  | `3`           | Maximum Loan amount accepted by the form. Must be more than or equal to 3.                                                                                                                                     |
 | ltStep          | Integer  | `1`           | The amount you want to increment the loan term slider by.                                                                                                                                                      |
-| fixedControls   | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls  to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form. |
+| fixedControls   | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form.  |
 | laMarks         | Object   | `{}`          | Loan amount marks for the slider.                                                                                                                                                                              |
 | termsConditions | String   | `''`          | Absolute URL of your terms and conditions page. This will include a link to your terms and conditions on the submit stage                                                                                      |
 | privacyPolicy   | String   | `''`          | Absolute URL of your privacy policy page. This will include a link to your privacy policy on the submit stage                                                                                                  |
-| hideLoanAmountStage   | Boolean   | `false`          | If you are providing the loanAmount configuration setting, this setting will remove the loan amount stage from the form completely.                                                                            |
-| hideLoanTermStage   | Boolean   | `false`          | If you are providing the loanTerm configuration setting, this setting will remove the loan term stage from the form completely.                                                                                |
+| hideLoanAmountStage | Boolean   | `false`          | If you are providing the loanAmount configuration setting, this setting will remove the loan amount stage from the form completely.                                                                    |
+| hideLoanTermStage   | Boolean   | `false`          | If you are providing the loanTerm configuration setting, this setting will remove the loan term stage from the form completely.                                                                        |
+| theme           | Enum     | `''`          | To apply one of the predefined themes to the form from the [list below](#themes)                                                                                    |
 
 ### Settings Example
 ```js
@@ -101,6 +103,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
     },
     termsConditions: 'https://www.yourdomain.com/terms-and-conditions',
     privacyPolicy: 'https://www.yourdomain.com/privacy-policy',
+    theme: 'ChooseWisely',
   };
 ```
 
@@ -116,6 +119,13 @@ Higher conversion rates can be expected if you run the form on a stand alone pag
 
 The form has its own stylesheet and a set of basic styles. The stylesheet is loaded asynchronously using javascript to prevent any render blocking by the browser. This stylesheet is prepended to the top of the <head/> tag. To override the default styles you will need to modify your sites stylesheets.
 
+
+### Themes
+The form has a list of prestyled themes that can be applied, use the theme name from the table below 
+
+| Name             | Decription                                         |
+| ---------------- | -------------------------------------------------- |
+| `ChooseWisely`   | Styled to look like the default Choose Wisely form |
 
 ### CSS
 The form is wrapped in the class `.ccAppForm` all form elements are prefixed with this class e.g. `.ccAppForm--button`. This is to prevent the forms styles from affecting other elements on your site. Below are some example selectors.
