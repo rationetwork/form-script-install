@@ -87,12 +87,12 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
     fixedControls: true,
     onSubmit:function(){
       // Callback, runs when the form is submitted
-	   window.ga('send', {
-		  hitType: 'event',
-		  eventCategory: 'Videos',
-		  eventAction: 'play',
-		  eventLabel: 'Fall Campaign'
-		});
+	window.ga('send', {
+	  hitType: 'event',
+	  eventCategory: 'Loan application form',
+	  eventAction: 'Submit',
+	  eventLabel: 'Success'
+	});
     },
     laMarks: {
       1000: '£1k',
