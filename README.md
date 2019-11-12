@@ -77,10 +77,10 @@ The configuration options below are only for the **results only** integration me
 
 | Name                | Type     | Default       | Description                                                                                                                                                                                                                             |
 | ------------------- | -------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| applicantEvent      | Boolean  | `false`       | Setting this to `true` will put the application in a dormant state, it will enable an event listener that will only render and display the application process and then comparison results once it receives data. See the [example event](#Application Event) below for the required event type. |
-| resultsEvent        | Boolean  | `false`       | Setting this to `true` will put the application in a dormant state, it will enable an event listener that will only render and display the comparison results once it receives data. See the [example event](#Application Event) below for the required event type. |
-| applicantPayload    | Object   | ``            | Use this to pass your applicant form data in the required format, it will render and display the application process and then comparison results immediately. See the [example payload](#Application Event) below for the required syntax. |
-| resultsPayload      | Object   | ``            | Use this to pass the result payload received from the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts/1.02), the application will render and display the comparison results immediately. See the [example payload](#Successful results response) below for the required syntax. |
+| applicantEvent      | Boolean  | `false`       | Setting this to `true` will put the application in a dormant state, it will enable an event listener that will only render and display the application process and then comparison results once it receives data. See the [example event](#applicant-event) below for the required event type. |
+| resultsEvent        | Boolean  | `false`       | Setting this to `true` will put the application in a dormant state, it will enable an event listener that will only render and display the comparison results once it receives data. See the [example event](#results-event) below for the required event type. |
+| applicantPayload    | Object   | ``            | Use this to pass your applicant form data in the required format, it will render and display the application process and then comparison results immediately. See the [example payload](#applicant-payload) below for the required syntax. |
+| resultsPayload      | Object   | ``            | Use this to pass the result payload received from the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts/1.02), the application will render and display the comparison results immediately. See the [example payload](#successful-results-response-/-payload) below for the required syntax. |
 
 ### Settings Example
 ```js
@@ -203,11 +203,11 @@ This is to prevent the forms styles from affecting other elements on your site. 
 }
 ```
 
-##Comparison Results
+## Comparison Results
 After your visitors complete the form you now have the option to show them the Choose Wisely powered comparison table where we will have matched them with their best available options directly on your site.
 
 
-###Modes
+### Modes
 There are two journey options for a customer once they submit the form. The customer can redirect through to Choose Wisely
 for their application process and their unique set of comparison results. Or the application process and their comparison table of results can be displayed directly on your site within the `elemId` element.
 
@@ -216,7 +216,7 @@ for their application process and their unique set of comparison results. Or the
 | `Redirect`  | Once the form is submitted, the user will redirect to Choose Wisely to display the results of their application.                                                                      |
 | `Results`   | Once the form is submitted, the user will be presented with the application submission process, after which, their application results will be presented all within the same element. |
 
-###Example Responses & Events
+### Example Responses & Events
 
 #### Applicant Event
 Pass the customer form data into the `detail` part of the event object in the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts/1.02) format.
