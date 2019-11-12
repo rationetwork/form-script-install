@@ -3,11 +3,15 @@
 Get set up with a form and / or results that you can use to introduce your site's visitors to Choose Wisely’s award winning personal loan comparison service.
 
 - No API calls.
-- No iFrames.
+- No iframes.
 - No REST responses.
 
-It works by running a stand-alone application form on your site. Your visitors complete the form and are then redirected to a comparison table powered by Choose Wisely where we will match them with their best available options.  
- 
+The application can work in 2 modes, both of which allow your visitors' needs to be matched against a comparison table showing their best available options.
+
+- Redirect mode. After completing the form the visitor is redirected to the Choose Wisely site where a comparison table of results is displayed.
+- Results mode. After completing the form a comparison table is fetched which is displayed directly on your own site.  
+<br />
+
 ## Get Started
 Your code snippet comes in two parts. 
 ### Part 1, Container Tag
@@ -32,11 +36,12 @@ Paste this just before the closing `</body>` tag.
     </script>
     <script type="text/javascript" src="https://3pi.choosewisely.co.uk/ccLoader.js"></script>
 ```
+<br />
 
 ## Configuration Settings
 ccBundle accepts the object `clearChoice_conf` as configuration with the following options.
 
-### Form Specific
+### General
 | Name            | Type     | Default       | Description                                                                                                                                                                                                    |
 | --------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | key             | String   | REQUIRED      | Your affiliate key, must be a valid key with no spaces.                                                                                                                                                        |
@@ -45,35 +50,38 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | elemId          | String   | `'ccApply'`   | Id of the element where your form will render, must be a valid id with no spaces.                                                                                                                              |
 | theme           | Enum     | `''`          | Apply one of the predefined themes to the form using a theme from the [list below](#themes).                                                                                                                   |
 | mode            | Enum     | `'Redirect'`  | Define behaviour after the form has been submitted, use one of the predefined modes from the [list below](#modes).                                                                                             |
-| submitText      | String   | `'Get Quote'` | The text that will show inside your submit button.                                                                                                                                                             |
-| onSubmit        | Function | `NOOP`        | Callback that will run when the form is submitted. Contains customer data. Can be used to send events to analytics platforms like GA.                                                                          |
-| sendingText        | String | `''`        | Message that the user will see after clicking the submit button on the form.  Also includes a loading bar.                                                                                                      |
-| continueText      | String   | `'Continue'` | The button text that shows next to input fields when they are valid.                                                                                                                                          |
+
+### Form Specific
+| Name            | Type     | Default       | Description                                                                                                                                                                                                    |
+| --------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | loanAmount      | Integer  | `1000`        | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
+| hideLoanAmountStage | Boolean   | `false`          | If you are providing the loanAmount configuration setting, this setting will remove the loan amount stage from the form completely.                                                                    |
 | loanTerm        | Integer  | `12`          | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
-| alwaysShowFirstStage      | Boolean  | `false`        | Always start on the first stage of the form. Useful if you want to set a default `loanAmount` and or `loanTerm` but stil want to show these fields.                                                 |
-| showInputWarnings      | Boolean  | `true`        | Show or hide warnings if users enter data that passes validation but looks suspect.                                                                                                                     |
-| laMax           | Integer  | `1000`        | Maximum Loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
-| laMin           | Integer  | `100`         | Maximum Loan amount accepted by the form. Must be more than or equal to 100.                                                                                                                                   |
+| hideLoanTermStage   | Boolean   | `false`          | If you are providing the loanTerm configuration setting, this setting will remove the loan term stage from the form completely.                                                                        |
+| alwaysShowFirstStage      | Boolean  | `false`        | Always start on the first stage of the form. Useful if you want to set a default `loanAmount` and or `loanTerm` but still want to show these fields.                                                 |
+| laMax           | Integer  | `1000`        | Maximum loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
+| laMin           | Integer  | `100`         | Minimum loan amount accepted by the form. Must be more than or equal to 100.                                                                                                                                   |
 | laStep          | Integer  | `100`         | The amount you want to increment the loan amount slider by.                                                                                                                                                    |
-| fixedControls   | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form.  |
-| laMarks         | Object   | `{}`          | Loan amount marks for the slider.                                                                                                                                                                              |
+| laMarks         | Object   | `{}`          | Add loan amount marks for the slider.                                                                                                                                                                              |
 | ltMarks         | Boolean  | `false`       | Add loan term marks to the loan term slider.                                                                                                                                                                   |
+| showInputWarnings      | Boolean  | `true`        | Show or hide warnings if users enter data that passes validation but looks suspect.                                                                                                                     |
+| continueText      | String   | `'Continue'` | The button text that shows next to input fields when they are valid.                                                                                                                                          |
 | termsConditions | String   | `''`          | Absolute URL of your terms and conditions page. This will include a link to your terms and conditions on the submit stage                                                                                      |
 | privacyPolicy   | String   | `''`          | Absolute URL of your privacy policy page. This will include a link to your privacy policy on the submit stage                                                                                                  |
-| hideLoanAmountStage | Boolean   | `false`          | If you are providing the loanAmount configuration setting, this setting will remove the loan amount stage from the form completely.                                                                    |
-| hideLoanTermStage   | Boolean   | `false`          | If you are providing the loanTerm configuration setting, this setting will remove the loan term stage from the form completely.                                                                        |
+| submitText      | String   | `'Get Quote'` | The text that will show inside your submit button.                                                                                                                                                             |
+| sendingText        | String | `''`        | Message that the user will see after clicking the submit button on the form.  Also includes a loading bar.                                                                                                      |
 | onSubmit        | Function | `NOOP`        | Callback that will run when the form is submitted. Single parameter contains the anonymised form data. Can be used to send events to analytics platforms like GA.                                              |
+| fixedControls   | Boolean  | `true`        | The form has fixed controls at the bottom of the screen. Setting fixedControls to false forces these controls to sit directly under the form fields. Use this if you want to control the height of your form.  |
 
 ### Results Specific
-The configuration options below are for the **form and results** and **results only** integration methods. These are only used when the `mode` configuration is set to `Results`.
+The configuration options below are for the **[form and results]** and **[results only]** integration methods. These are only used when the `mode` configuration is set to `Results`.
 
 | Name                | Type     | Default       | Description                                                                                                                                                                                                    |
 | ------------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onResultsSuccess    | function | `NOOP`        | Callback that will run in `Results` mode when the results are returned but before they are displayed. Single parameter contains the array of results.                                                      |
 | onResultsError      | function | `NOOP`        | Callback that will run in `Results` mode when the API request fails. Single parameter contains details of the error.                                                                                       |
 
-The configuration options below are only for the **results only** integration method.
+The configuration options below are only for the **[results only]** integration method. These are only used when the `mode` configuration is set to `Results`.
 
 | Name                | Type     | Default       | Description                                                                                                                                                                                                                             |
 | ------------------- | -------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -87,11 +95,12 @@ The configuration options below are only for the **results only** integration me
   window.clearChoice_conf = window.clearChoice_conf || {};
   clearChoice_conf = {
     key: 'KCB3FDCD-ABCD-1234-9HGD-123CVRGVE4FE',
-    ref: '1234', 
-    elemId: 'ccApply', 
+    ref: '1234',
+    elemId: 'ccApply',
     theme: 'ChooseWisely',
-    submitText: 'Get my quote', 
-    continueText: 'Go', 
+    mode: 'Results',
+    submitText: 'Get my quote',
+    continueText: 'Go',
     loanAmount: 2000,
     alwaysShowFirstStage: true,
     showInputWarnings: false,
@@ -118,21 +127,17 @@ The configuration options below are only for the **results only** integration me
     onResultsError: function(error){ 
       console.log(error);
     },
-    laMarks: {
-      1000: '£1k',
-      3000: '£3k',
-      5000: '£5k',
-      10000: '£10k',
-      20000: '£20k',
-    },
     termsConditions: 'https://www.yourdomain.com/terms-and-conditions',
     privacyPolicy: 'https://www.yourdomain.com/privacy-policy'
   };
 ```
 
+<br />
+
 ## Layout
 Higher conversion rates can be expected if you run the application on a stand alone page with minimal navigation and no footer. This also requires the minimum level of styling work to get running. For a working example [see Choose Wisely's own form](https://www.choosewisely.co.uk/loans/short-term-loan-search/apply)
 
+<br />
 
 ## Styling
 
@@ -150,9 +155,11 @@ The form and results have a list of prestyled themes that can be applied, use a 
 | ---------------- | -------------------------------------------------- |
 | `ChooseWisely`   | Styled to look like the default Choose Wisely form |
 
-### CSS
+### Css
 The form is wrapped in the class `.ccAppForm`, all form elements are prefixed with this class e.g. `.ccAppForm--button`.
 The comparison results are wrapped in `.ccAppResults`, and all result elements are prefixed with this class e.g. `.ccAppResults--result--button`.
+When the viewport width is >= 800px the comparison results also include the `.ccAppResults-dt` wrapper class. 
+
 This is to prevent the forms styles from affecting other elements on your site. Below are some example selectors.
 
 #### Form Validation 
@@ -184,6 +191,14 @@ This is to prevent the forms styles from affecting other elements on your site. 
 }
 ```
 
+#### Result Accept Row
+```css
+.ccAppResults--result--card {
+  border-radius: .25rem;
+  border: .125rem solid green;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+```
 
 #### Buttons
 
@@ -202,6 +217,7 @@ This is to prevent the forms styles from affecting other elements on your site. 
   color: #fff;
 }
 ```
+<br />
 
 ## Comparison Results
 After your visitors complete the form you now have the option to show them the Choose Wisely powered comparison table where we will have matched them with their best available options directly on your site.
@@ -215,6 +231,18 @@ for their application process and their unique set of comparison results. Or the
 | ------------| -------------------------------------------------- |
 | `Redirect`  | Once the form is submitted, the user will redirect to Choose Wisely to display the results of their application.                                                                      |
 | `Results`   | Once the form is submitted, the user will be presented with the application submission process, after which, their application results will be presented all within the same element. |
+
+### Integraion Methods
+There are two integration methods for showing the comparison results on your site **[form and results]** and **[results only]**.
+
+#### Form and results
+This is the integration method for using both the form and the comparison results on your site,
+once the form is submitted the applicant data will be sent to providers, once a response is returned, a comparison table of results will be displayed. 
+
+#### Results only
+This is the integration method for using your existing form, submitting your applicant data and then displaying the comparison table of results on your site.
+Using this integration method the application will be loaded in a dormant state, it will only render and display the comparison results once it receives data,
+either from an incoming event or when passed an applicant or a response payload via the `clearChoice_conf` configuration object.  
 
 ### Example Responses & Events
 
