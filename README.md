@@ -306,7 +306,7 @@ dispatchEvent(new CustomEvent('cargoResults', {
 ```
 
 #### Applicant Payload
-This is an example applicant payload in the Choose Wisely White Label Results API format.
+This is an example applicant payload in the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts/1.02) format.
 
 ```json
 {
