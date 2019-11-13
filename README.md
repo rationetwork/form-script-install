@@ -232,17 +232,18 @@ for their application process and their unique set of comparison results. Or the
 | `Redirect`  | Once the form is submitted, the user will redirect to Choose Wisely to display the results of their application.                                                                      |
 | `Results`   | Once the form is submitted, the user will be presented with the application submission process, after which, their application results will be presented all within the same element. |
 
-### Integraion Methods
+### Integration Methods
 There are two integration methods for showing the comparison results on your site **[form and results]** and **[results only]**.
 
 #### Form and results
 This is the integration method for using both the form and the comparison results on your site,
-once the form is submitted the applicant data will be sent to providers, once a response is returned, a comparison table of results will be displayed. 
+once the form is submitted, the user will see a progress screen whilst the applicant data is being sent to providers,
+once a response is returned, the progress screen will change to their comparison table of results. 
 
 #### Results only
-This is the integration method for using your existing form, submitting your applicant data and then displaying the comparison table of results on your site.
+This is the integration method when using your existing site form, submitting your applicant data and then displaying the comparison table of results on your site.
 Using this integration method the application will be loaded in a dormant state, it will only render and display the comparison results once it receives data,
-either from an incoming event or when passed an applicant or a response payload via the `clearChoice_conf` configuration object.  
+either from an incoming event or when passed an applicant or response payload via the `clearChoice_conf` configuration object.  
 
 ### Example Responses & Events
 
