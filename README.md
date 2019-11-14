@@ -94,7 +94,7 @@ The configuration options below are only for the **[results only]** integration 
 ```js
   window.clearChoice_conf = window.clearChoice_conf || {};
   clearChoice_conf = {
-    key: 'KCB3FDCD-ABCD-1234-9HGD-123CVRGVE4FE',
+    key: 'E2D9A3DF-A67B-4F2D-88A3-9EF570EB04EC',
     ref: '1234',
     elemId: 'ccApply',
     theme: 'ChooseWisely',
@@ -145,20 +145,20 @@ Higher conversion rates can be expected if you run the application on a stand al
 
 [This more advanced demo](https://jsfiddle.net/ratio/xr2n8675/) shows how you can lay out the multi choice boxes in a grid.
 
-The form and results have their own stylesheets and a set of basic styles. The stylesheets are loaded asynchronously using javascript to prevent any render blocking by the browser. This stylesheets are prepended to the top of the `<head/>` tag. To override the default styles you will need to modify your sites stylesheets.
+The form and results have their own stylesheets and a set of basic styles. These stylesheets are loaded asynchronously using javascript to prevent any render blocking by the browser. This stylesheets are prepended to the top of the `<head/>` tag. To override the default styles you will need to modify your sites stylesheets.
 
 
 ### Themes
 The form and results have a list of prestyled themes that can be applied, use a theme name from the table below in your form settings configuration.
 
-| Name             | Decription                                         |
+| Name             | Description                                         |
 | ---------------- | -------------------------------------------------- |
 | `ChooseWisely`   | Styled to look like the default Choose Wisely form |
 
 ### Css
 The form is wrapped in the class `.ccAppForm`, all form elements are prefixed with this class e.g. `.ccAppForm--button`.
-The comparison results are wrapped in `.ccAppResults`, and all result elements are prefixed with this class e.g. `.ccAppResults--result--button`.
-When the viewport width is >= 800px the comparison results also include the `.ccAppResults-dt` wrapper class. 
+The comparison results are wrapped in the class `.ccAppResults`, and all result elements are also prefixed with this class e.g. `.ccAppResults--result--button`.
+When the viewport width is >= `800px` the comparison results also include the `.ccAppResults-dt` wrapper class. 
 
 This is to prevent the forms styles from affecting other elements on your site. Below are some example selectors.
 
@@ -227,7 +227,7 @@ After your visitors complete the form you now have the option to show them the C
 There are two journey options for a customer once they submit the form. The customer can redirect through to Choose Wisely
 for their application process and their unique set of comparison results. Or the application process and their comparison table of results can be displayed directly on your site within the `elemId` element.
 
-| Name        | Decription                                         |
+| Name        | Description                                         |
 | ------------| -------------------------------------------------- |
 | `Redirect`  | Once the form is submitted, the user will redirect to Choose Wisely to display the results of their application.                                                                      |
 | `Results`   | Once the form is submitted, the user will be presented with the application submission process, after which, their application results will be presented all within the same element. |
@@ -302,7 +302,7 @@ dispatchEvent(new CustomEvent('cargoResults', {
         "_id": "abc",
         "applicationURL": [],
         "lenderName": "A lender",
-        "logo": "https://logo.com/logo.gif",
+        "logo": "https://via.placeholder.com/80",
         "representativeExample": "If you borrow £3,500.00 over 36 months at a Representative rate of 61.8% APR and an annual interest rate of 49.10% (fixed), you would pay 36 monthly installments of £187.51. The total charge for credit will be £3,250.36 and the total amount payable will be £6,750,36.",
         "apr": 49.7,
         "loanTermType": "Months",
@@ -319,10 +319,10 @@ dispatchEvent(new CustomEvent('cargoResults', {
         ],
         "approved": false,
         "redirectPath": "",
-        "_id": "abc",
+        "_id": "def",
         "applicationURL": [],
         "lenderName": "Lender 2",
-        "logo": "https://logo.com/logo.gif",
+        "logo": "https://via.placeholder.com/80",
         "representativeExample": "Amount of credit: £500. Interest rate: 0.8% per day for up to 40 days (292% per annum (variable). Representative 68.7% APR (variable).",
         "apr": 68.7,
         "loanTermType": "Days",
@@ -383,7 +383,7 @@ This is an example response returned from the Choose Wisely White Label Results 
       "_id": "abc",
       "applicationURL": [],
       "lenderName": "A lender",
-      "logo": "https://logo.com/logo.gif",
+      "logo": "https://via.placeholder.com/80",
       "representativeExample": "If you borrow £3,500.00 over 36 months at a Representative rate of 61.8% APR and an annual interest rate of 49.10% (fixed), you would pay 36 monthly installments of £187.51. The total charge for credit will be £3,250.36 and the total amount payable will be £6,750,36.",
       "apr": 49.7,
       "loanTermType": "Months",
@@ -400,10 +400,10 @@ This is an example response returned from the Choose Wisely White Label Results 
       ],
       "approved": false,
       "redirectPath": "",
-      "_id": "abc",
+      "_id": "def",
       "applicationURL": [],
       "lenderName": "Lender 2",
-      "logo": "https://logo.com/logo.gif",
+      "logo": "https://via.placeholder.com/80",
       "representativeExample": "Amount of credit: £500. Interest rate: 0.8% per day for up to 40 days (292% per annum (variable). Representative 68.7% APR (variable).",
       "apr": 68.7,
       "loanTermType": "Days",
