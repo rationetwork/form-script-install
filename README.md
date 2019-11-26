@@ -114,7 +114,7 @@ The configuration options below are only for the **[results only]** integration 
       // formData contains submitted data
       console.log(formData);
       
-      // Send an event to google analytics.
+      // Send an event to google analytics for example.
       // window.ga('send', {
       //   hitType: 'event',
       //   eventCategory: 'Form',
