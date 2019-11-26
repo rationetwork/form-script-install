@@ -95,8 +95,8 @@ The configuration options below are only for the **[results only]** integration 
 ```js
   window.clearChoice_conf = window.clearChoice_conf || {};
   clearChoice_conf = {
-    key: 'E2D9A3DF-A67B-4F2D-88A3-9EF570EB04EC',
-    ref: '1234',
+    key: 'your-api-key-goes-here',
+    ref: 'your-ref-goes-here',
     elemId: 'ccApply',
     theme: 'ChooseWisely',
     mode: 'Results',
@@ -115,12 +115,12 @@ The configuration options below are only for the **[results only]** integration 
       console.log(formData);
       
       // Send an event to google analytics.
-      window.ga('send', {
-        hitType: 'event',
-        eventCategory: 'Form',
-        eventAction: 'Submit',
-        eventLabel: formData.loanAmount + '|' + formData.loanTerm,
-      });
+      // window.ga('send', {
+      //   hitType: 'event',
+      //   eventCategory: 'Form',
+      //   eventAction: 'Submit',
+      //   eventLabel: formData.loanAmount + '|' + formData.loanTerm,
+      // });
     },
     onResultsSuccess: function(results){
       console.log(results);
