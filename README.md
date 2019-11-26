@@ -50,6 +50,7 @@ ccBundle accepts the object `clearChoice_conf` as configuration with the followi
 | elemId          | String   | `'ccApply'`   | Id of the element where your form will render, must be a valid id with no spaces.                                                                                                                              |
 | theme           | Enum     | `''`          | Apply one of the predefined themes to the form using a theme from the [list below](#themes).                                                                                                                   |
 | mode            | Enum     | `'Redirect'`  | Define behaviour after the form has been submitted, use one of the predefined modes from the [list below](#modes).                                                                                             |
+| staging         | Boolean  | `false`       | Use the staging environment with your staging `key` during setup and testing, this is especially useful if you are using the `Results` mode |
 
 ### Form Specific
 | Name            | Type     | Default       | Description                                                                                                                                                                                                    |
