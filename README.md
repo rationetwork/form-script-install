@@ -89,7 +89,7 @@ The configuration options below are only for the **[results only]** integration 
 | applicantEvent      | Boolean  | `false`       | Setting this to `true` will put the application in a dormant state, it will enable an event listener that will only render and display the application process and then comparison results once it receives data. See the [example event](#applicant-event) below for the required event type. |
 | resultsEvent        | Boolean  | `false`       | Setting this to `true` will put the application in a dormant state, it will enable an event listener that will only render and display the comparison results once it receives data. See the [example event](#results-event) below for the required event type. |
 | applicantPayload    | Object   | ``            | Use this to pass your applicant form data in the required format, it will render and display the application process and then comparison results immediately. See the [example payload](#applicant-payload) below for the required syntax. |
-| resultsPayload      | Object   | ``            | Use this to pass the result payload received from the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts/1.02), the application will render and display the comparison results immediately. See the [example payload](#successful-results-response--payload) below for the required syntax. |
+| resultsPayload      | Object   | ``            | Use this to pass the result payload received from the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts), the application will render and display the comparison results immediately. See the [example payload](#successful-results-response--payload) below for the required syntax. |
 
 ### Settings Example
 ```js
@@ -249,7 +249,7 @@ either from an incoming event or when passed an applicant or response payload vi
 ### Example Responses & Events
 
 #### Applicant Event
-Pass the customer form data into the `detail` part of the event object in the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts/1.02) format.
+Pass the customer form data into the `detail` part of the event object in the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts) format.
  
 ```js
 dispatchEvent(new CustomEvent('cargoApplicant', {
@@ -336,7 +336,7 @@ dispatchEvent(new CustomEvent('cargoResults', {
 ```
 
 #### Applicant Payload
-This is an example applicant payload in the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts/1.02) format.
+This is an example applicant payload in the [Choose Wisely White Label Results API](https://app.swaggerhub.com/apis/Ratio4/choosewisely-white-label-resuts) format.
 
 ```json
 {
