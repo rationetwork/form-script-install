@@ -8,7 +8,7 @@ Get set up with a loan slider that you can use to introduce your site's visitors
 
 The widget will allow your visitors to be redirected to Choose Wisely and begin their journey and matched against a comparison table showing their best available options.
 
-<br />
+![image](../images/widgetChooseWiselyTheme.png)
 
 ## Get Started
 Your code snippet comes in two parts. 
