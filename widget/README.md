@@ -65,7 +65,7 @@ The widget accepts the object `ccWidget_conf` as configuration with the followin
 
 ### Settings Example
 ```js
-window.ccWidget_conf = window.ccWidget_conf || {};
+  window.ccWidget_conf = window.ccWidget_conf || {};
   ccWidget_conf = {
     key: 'your-api-key-goes-here',
     ref: 'your-ref-goes-here',
@@ -88,8 +88,8 @@ window.ccWidget_conf = window.ccWidget_conf || {};
       //   eventAction: 'Submit',
       //   eventLabel: sliderData.loanAmount + '|' + sliderData.loanTerm,
       // });
-  }
-};
+    }
+  };
 ```
 
 <br />
