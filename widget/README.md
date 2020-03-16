@@ -13,7 +13,7 @@ The widget will allow your visitors to be redirected to Choose Wisely and begin 
 ## Get Started
 Your code snippet comes in two parts. 
 ### Part 1, Container Tag
-Paste this where you want the form to run on your site.
+Paste this where you want the widget to run on your site.
 
 ```html
 <div id="ccWidget"></div>
@@ -45,8 +45,8 @@ The widget accepts the object `ccWidget_conf` as configuration with the followin
 | key             | String   | REQUIRED      | Your affiliate key, must be a valid key with no spaces.                                                                                                                                                        |
 | ref             | String   | `''`          | Your affiliate reference, must be a valid reference with no spaces (max 48 characters).                                                                                                                        |
 | gclid           | String   | `''`          | Your unique click id tracking parameter, must not contain spaces (max 100 characters).                                                                                                                         |
-| elemId          | String   | `'ccApply'`   | Id of the element where your form will render, must be a valid id with no spaces.                                                                                                                              |
-| theme           | Enum     | `'Default'`   | Apply one of the predefined themes to the form using a theme from the [list below](#themes).                                                                                                                   |
+| elemId          | String   | `'ccApply'`   | Id of the element where your widget will render, must be a valid id with no spaces.                                                                                                                              |
+| theme           | Enum     | `'Default'`   | Apply one of the predefined themes to the widget using a theme from the [list below](#themes).                                                                                                                   |
 | staging         | Boolean  | `false`       | Use the staging environment with your staging `key` during setup and testing. |
 
 ### Loan Amount & Term Specific
@@ -84,7 +84,7 @@ The widget accepts the object `ccWidget_conf` as configuration with the followin
       // Send an event to google analytics for example.
       // window.ga('send', {
       //   hitType: 'event',
-      //   eventCategory: 'Form',
+      //   eventCategory: 'Widget',
       //   eventAction: 'Submit',
       //   eventLabel: sliderData.loanAmount + '|' + sliderData.loanTerm,
       // });
@@ -112,7 +112,7 @@ The widget has a list of prestyled themes that can be applied, use a theme name 
 ### Css
 The widget is wrapped in the class `.ccWidget`, all widget elements are prefixed with this class e.g. `.ccWidget--button`.
 
-This is to prevent the forms styles from affecting other elements on your site. Below are some example selectors.
+This is to prevent the widgets styles from affecting other elements on your site. Below are some example selectors.
 
 #### Button 
 
