@@ -51,15 +51,15 @@ The widget accepts the object `ccWidget_conf` as configuration with the followin
 
 ### Loan Amount & Term Specific
 | Name            | Type     | Default          | Description                                                                                                                                                                                                    |
-| --------------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| loanAmount      | Integer  | `2000`           | Loan amount for application. You may want to pass this to the form from your landing page.                                                                                                                     |
-| loanTerm        | Integer  | `12`             | Loan term for application. You may want to pass this to the form from your landing page.                                                                                                                       |
-| laMax           | Integer  | `10000`          | Maximum loan amount accepted by the form. Must be less than or equal to 25000.                                                                                                                                 |
-| laMin           | Integer  | `100`            | Minimum loan amount accepted by the form. Must be more than or equal to 100.                                                                                                                                   |
-| laStep          | Integer  | `100`            | The amount you want to increment the loan amount slider by.                                                                                                                                                    |
-| submitText      | String   | `'Get Accepted'` | The text that will show inside your submit button.                                                                                                                                                             |
-| sendingText     | String   | `'Sending...'`   | Message that the user will see after clicking the submit button on the form.  Also includes a loading bar.                                                                                                     |
-| onSubmit        | Function | `NOOP`           | Callback that will run when the form is submitted. Single parameter contains the anonymised form data. Can be used to send events to analytics platforms like GA.                                              |
+| --------------- | -------- | ---------------- | -----------------------------------------------------------------------|
+| loanAmount      | Integer  | `2000`           | Initial loan amount for the widget and slider.                         |
+| loanTerm        | Integer  | `12`             | Initial loan term for widget and select boxes.                         |
+| laMax           | Integer  | `10000`          | Maximum loan amount for the slider and input field. Must be less than or equal to 25000. |
+| laMin           | Integer  | `100`            | Minimum loan amount for the slider and input field. Must be more than or equal to 100. |
+| laStep          | Integer  | `100`            | The amount you want the loan amount slider to increment by.            |
+| submitText      | String   | `'Get Accepted'` | The text that will show on the submit button.                          |
+| sendingText     | String   | `'Sending...'`   | Message that the user will see after clicking the submit button on the widget. |
+| onSubmit        | Function | `NOOP`           | Callback that will run when the widget button is clicked. Single parameter contains the loan amount and loan term data. Can be used to send events to analytics platforms like GA. |
 
 <br />
 
