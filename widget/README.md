@@ -47,7 +47,7 @@ The widget accepts the object `ccWidget_conf` as configuration with the followin
 | gclid           | String   | `''`          | Your unique click id tracking parameter, must not contain spaces (max 100 characters).                                                                                                                         |
 | elemId          | String   | `'ccApply'`   | Id of the element where your form will render, must be a valid id with no spaces.                                                                                                                              |
 | theme           | Enum     | `'Default'`   | Apply one of the predefined themes to the form using a theme from the [list below](#themes).                                                                                                                   |
-| staging         | Boolean  | `false`       | Use the staging environment with your staging `key` during setup and testing, this is especially useful if you are using the `Results` mode |
+| staging         | Boolean  | `false`       | Use the staging environment with your staging `key` during setup and testing. |
 
 ### Loan Amount & Term Specific
 | Name            | Type     | Default          | Description                                                                                                                                                                                                    |
