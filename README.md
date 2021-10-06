@@ -81,6 +81,7 @@ The configuration options below are for the **[form and results]** and **[result
 | ------------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | onResultsSuccess    | function | `NOOP`        | Callback that will run in `Results` mode when the results are returned but before they are displayed. Single parameter contains the array of results.                                                      |
 | onResultsError      | function | `NOOP`        | Callback that will run in `Results` mode when the API request fails. Single parameter contains details of the error.                                                                                       |
+| onResultAction      | function | `NOOP`        | Callback that will run in `Results` mode when a customer redirects to a provider either by clicking a CTA or the auto redirect. Single parameter contains a object with details about the specific provider.  |
 
 The configuration options below are only for the **[results only]** integration method. These are only used when the `mode` configuration is set to `Results`.
 
