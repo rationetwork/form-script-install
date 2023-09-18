@@ -34,7 +34,7 @@ Paste this just before the closing `</body>` tag.
 	theme: 'ChooseWisely' // Optional
       };
     </script>
-    <script type="text/javascript" src="https://3pi.choosewisely.co.uk/ccLoader.js"></script>
+    <script type="text/javascript" src="https://3pi.choosewisely.co.uk/ccLoaderV1.js"></script>
 ```
 <br />
 
