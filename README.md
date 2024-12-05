@@ -1,6 +1,7 @@
-# Clear Choice Setup 
+# White Label Application Setup
 
-Get set up with a form and / or results that you can use to introduce your site's visitors to Choose Wisely’s award winning personal loan comparison service.
+The application widget enables you to integrate Choose Wisely’s award winning personal loan comparison service on your own website. 
+Get set up with a form and / or results that you can use to introduce your site's visitors to Choose Wisely.
 
 - No API calls.
 - No iframes.
